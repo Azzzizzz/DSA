@@ -1,0 +1,2 @@
+1. Print all the factors till the n number
+2.
