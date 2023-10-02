@@ -62,6 +62,28 @@ public class FindProduct {
 
     }
 
+    static int[] findProductUsingCaching2(int[] arr) { //more optimized - used 2 for loops
+        int n = arr.length;
+        int[] output = new int[n];
+        int product = 1;
+
+        // Calculate the product of all elements to the left of each element
+        for (int i = 0; i < n; i++) {
+            output[i] = product;
+            product *= arr[i];
+        }
+
+        product = 1;
+
+        // Calculate the product of all elements to the right of each element
+        for (int i = n - 1; i >= 0; i--) {
+            output[i] *= product;
+            product *= arr[i];
+        }
+
+        return output;
+    }
+
 
     public static int calculateProduct(int[] arr) {
         int res = 1;
