@@ -84,6 +84,29 @@ public class FindProduct {
         return output;
     }
 
+    static int[] findProductUsingCaching3(int[] arr) { // O(N), O(1)
+        int n = arr.length;
+        int[] output = new int[n];
+
+        int rightProduct = 1;
+
+        // Calculate the product of all elements to the left of each element
+        for (int i = 0; i < n; i++) {
+            output[i] = rightProduct;
+            rightProduct *= arr[i];
+        }
+
+        int leftProduct = 1;
+
+        // Calculate the product of all elements to the right of each element
+        for (int i = n - 1; i >= 0; i--) {
+            output[i] *= leftProduct;
+            leftProduct *= arr[i];
+        }
+
+        return output;
+    }
+
 
     public static int calculateProduct(int[] arr) {
         int res = 1;
