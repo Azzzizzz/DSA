@@ -14,12 +14,12 @@ public class Segregate012 {
         int n = arr.length;
         int count_0s = 0;
         int count_1s = 0;
-        int count_2s = 0;
+//        int count_2s = 0;
 
         for (int i = 0; i < n; i++) {
             if (arr[i] == 0) count_0s++;
             else if (arr[i] == 1) count_1s++;
-            else count_2s++;
+//            else count_2s++;
         }
 
 
@@ -29,7 +29,7 @@ public class Segregate012 {
         for (int i = count_0s; i < count_0s + count_1s; i++) {
             arr[i] = 1;
         }
-        for (int i = count_0s + count_1s; i < count_0s + count_1s + count_2s; i++) {
+        for (int i = count_0s + count_1s; i < n; i++) {
             arr[i] = 2;
         }
     }
