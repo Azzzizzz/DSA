@@ -96,7 +96,8 @@ public class MergeTwoSortedArrays {
                 j++;
 
             }
-            gap = (gap <= 1) ? 0 : (gap + 1) / 2;
+            gap = (gap <= 1) ? 0 : ((gap + 1) / 2); //gap = (gap <= 1) ? 0 : (int) Math.ceil(gap / 2.0);
+
 
         }
     }
@@ -117,3 +118,15 @@ public class MergeTwoSortedArrays {
         }
     }
 }
+
+
+/*
+
+The addition of `+ 1` to the `gap` calculation serves to ensure that the loop continues when `gap` is 1, and it terminates when `gap` becomes 0. This logic is often used in a variation of the "merge sort" algorithm when merging subarrays. Let me explain how it works:
+
+1. When `gap` is 1: Without adding 1 (`gap <= 1`), the loop would terminate because `gap` is less than or equal to 1, and we don't want the loop to stop at this point. We want to continue with a smaller `gap`.
+
+2. When `gap` is 0: When `gap` becomes 0, it means that we have completed all the necessary merging operations. Adding 1 (`gap + 1`) ensures that the loop terminates when `gap` is 0, which is the desired behavior to end the merging process.
+
+So, the `(gap + 1) / 2` logic is used to halve the `gap` at each iteration while ensuring that the loop continues until the merging is complete. When `gap` becomes 1, it's divided by 2 to become 0.5, but the integer division truncates it to 0, and the loop terminates.
+ */
