@@ -6,7 +6,7 @@ public class BinarySearch {
         System.out.println("binary search");
         int[] arr = {1, 2, 4, 6, 7, 8, 9, 10};
         int[] arr2 = {};
-        System.out.println(binarySearch(arr, 9));
+        System.out.println(binarySearch(arr, 11));
     }
 
     static int binarySearch(int[] arr, int target) {
